@@ -1,0 +1,268 @@
+/* =========================
+   GENERAL
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f7f3ed;
+    color: #2d2a25;
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    background-color: #704b2b;
+    color: white;
+    padding: 20px 5%;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+.site-title {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
+nav {
+    margin-top: 15px;
+
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+nav a:hover,
+nav a:focus {
+    background-color: #8b5e34;
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+main {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+    padding: 40px 0;
+}
+
+section {
+    background-color: white;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 8px;
+    border: 1px solid #ded6cc;
+}
+
+h2 {
+    color: #704b2b;
+}
+
+h3 {
+    color: #8b5e34;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    padding: 0;
+    overflow: hidden;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    background-color: #704b2b;
+    color: white;
+}
+
+.hero-text {
+    padding: 50px;
+}
+
+.hero-text h2 {
+    color: white;
+    font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.hero-text p {
+    font-size: 1.1rem;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* =========================
+   LINKS / BUTTONS
+========================= */
+
+.hero a,
+button {
+    display: inline-block;
+
+    background-color: #ffffff;
+    color: #704b2b;
+
+    padding: 12px 18px;
+    margin: 5px;
+
+    text-decoration: none;
+
+    border: none;
+    border-radius: 5px;
+
+    cursor: pointer;
+}
+
+.hero a:hover,
+button:hover {
+    background-color: #e8dfd4;
+}
+
+
+/* =========================
+   FORMS
+========================= */
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+
+    margin-top: 5px;
+
+    border: 1px solid #aaa;
+    border-radius: 5px;
+
+    font-size: 1rem;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 3px solid #d7b892;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background-color: #2d2a25;
+    color: white;
+
+    text-align: center;
+
+    padding: 25px;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 880px) {
+
+    .hero {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-image {
+        max-height: 400px;
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 640px) {
+
+    header {
+        padding: 15px;
+    }
+
+    .site-title {
+    font-size: 1.5rem;
+
+    }
+
+    nav {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    nav a {
+        text-align: center;
+    }
+
+    main {
+        width: 94%;
+        padding: 20px 0;
+    }
+
+    .hero-text {
+        padding: 30px 20px;
+    }
+
+    .hero-text h2 {
+        font-size: 2rem;
+    }
+
+    section {
+        padding: 20px;
+    }
+    
+} /* End of mobile media query */
+
+
+/* FORM FEEDBACK MESSAGES */
+
+#form-message,
+#service-message {
+    margin-top: 10px;
+    font-weight: bold;
+}

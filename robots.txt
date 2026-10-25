@@ -2,5 +2,6 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://YOUR-DOMAIN.example/sitemap.xml
+Sitemap: https://musandiwa06.github.io/TimberCraft-Carpentry/sitemap.xml
+
 

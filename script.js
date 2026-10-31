@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", function () {
 
     // Enquiry page: service selection messages
@@ -32,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // Enquiry page: form validation feedback
+    // Enquiry page: personalised confirmation message
     const form = document.querySelector("#enquiry-form");
     const message = document.querySelector("#form-message");
 
@@ -40,8 +39,19 @@ document.addEventListener("DOMContentLoaded", function () {
         form.addEventListener("submit", function (event) {
             event.preventDefault();
 
+            const service = serviceSelect
+                ? serviceSelect.options[serviceSelect.selectedIndex].text
+                : "your selected service";
+
+            const budgetSelect = document.querySelector("#budget");
+            const budget = budgetSelect
+                ? budgetSelect.options[budgetSelect.selectedIndex].text
+                : "your selected budget";
+
             message.textContent =
-                "Your enquiry form is valid. Email submission has not been configured yet.";
+                "Thank you for your enquiry about " + service +
+                ". Your selected budget is " + budget +
+                ". We will review your project details and confirm the quotation and availability.";
         });
     }
 
@@ -54,7 +64,7 @@ document.addEventListener("DOMContentLoaded", function () {
             event.preventDefault();
 
             contactMessage.textContent =
-                "Your message is valid. Email submission has not been configured yet.";
+                "Thank you for contacting TimberCraft Carpentry. Your message is valid. Email submission has not been configured yet.";
         });
     }
 

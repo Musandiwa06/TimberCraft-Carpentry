@@ -68,16 +68,38 @@ if (form && message) {
 }
 
     // Contact page: form validation feedback
-    const contactForm = document.querySelector("#contact-form");
-    const contactMessage = document.querySelector("#contact-form-message");
+   // Contact page: email submission
+const contactForm = document.querySelector("#contact-form");
+const contactMessage = document.querySelector("#contact-form-message");
 
-    if (contactForm && contactMessage) {
-        contactForm.addEventListener("submit", function (event) {
-            event.preventDefault();
+if (contactForm && contactMessage) {
+    contactForm.addEventListener("submit", function (event) {
+        event.preventDefault();
 
-            contactMessage.textContent =
-                "Thank you for contacting TimberCraft Carpentry. Your message is valid. Email submission has not been configured yet.";
-        });
-    }
+        const name = document.querySelector("#contact-name").value;
+        const email = document.querySelector("#contact-email").value;
+        const phone = document.querySelector("#contact-phone").value;
+        const messageType = document.querySelector("#message-type").value;
+        const userMessage = document.querySelector("#contact-message").value;
+
+        const subject = encodeURIComponent(
+            "TimberCraft Carpentry Contact Message"
+        );
+
+        const body = encodeURIComponent(
+            "Name: " + name +
+            "\nEmail: " + email +
+            "\nPhone: " + phone +
+            "\nMessage Type: " + messageType +
+            "\nMessage: " + userMessage
+        );
+
+        contactMessage.textContent =
+            "Your message is ready. Your email application will open so you can send it.";
+
+        window.location.href =
+            "mailto:hello@timbercraft.co.za?subject=" + subject + "&body=" + body;
+    });
+}
 
 });

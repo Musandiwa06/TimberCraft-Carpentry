@@ -71,12 +71,14 @@
             <form id="contact-form">
                 <label for="contact-name">Full Name:</label>
                 <input
-                    type="text"
-                    id="contact-name"
-                    name="contact-name"
-                    autocomplete="name"
-                    required>
-
+    type="tel"
+    id="contact-phone"
+    name="contact-phone"
+    autocomplete="tel"
+    pattern="(\+27|0)[0-9]{9}"
+    title="Enter a valid South African phone number, e.g. 0821234567 or +27821234567"
+    required>
+   
                 <br><br>
 
                 <label for="contact-email">Email Address:</label>

@@ -31,7 +31,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // Enquiry page: personalised confirmation message
     // Enquiry page: email submission
 const form = document.querySelector("#enquiry-form");
 const message = document.querySelector("#form-message");

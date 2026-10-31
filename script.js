@@ -32,28 +32,41 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Enquiry page: personalised confirmation message
-    const form = document.querySelector("#enquiry-form");
-    const message = document.querySelector("#form-message");
+    // Enquiry page: email submission
+const form = document.querySelector("#enquiry-form");
+const message = document.querySelector("#form-message");
 
-    if (form && message) {
-        form.addEventListener("submit", function (event) {
-            event.preventDefault();
+if (form && message) {
+    form.addEventListener("submit", function (event) {
+        event.preventDefault();
 
-            const service = serviceSelect
-                ? serviceSelect.options[serviceSelect.selectedIndex].text
-                : "your selected service";
+        const service = serviceSelect.options[serviceSelect.selectedIndex].text;
+        const budgetSelect = document.querySelector("#budget");
+        const budget = budgetSelect.options[budgetSelect.selectedIndex].text;
 
-            const budgetSelect = document.querySelector("#budget");
-            const budget = budgetSelect
-                ? budgetSelect.options[budgetSelect.selectedIndex].text
-                : "your selected budget";
+        const name = document.querySelector("#name").value;
+        const email = document.querySelector("#email").value;
+        const phone = document.querySelector("#phone").value;
+        const description = document.querySelector("#message").value;
 
-            message.textContent =
-                "Thank you for your enquiry about " + service +
-                ". Your selected budget is " + budget +
-                ". We will review your project details and confirm the quotation and availability.";
-        });
-    }
+        const subject = encodeURIComponent("TimberCraft Carpentry Enquiry");
+
+        const body = encodeURIComponent(
+            "Name: " + name +
+            "\nEmail: " + email +
+            "\nPhone: " + phone +
+            "\nService: " + service +
+            "\nBudget: " + budget +
+            "\nProject Description: " + description
+        );
+
+        message.textContent =
+            "Your enquiry is ready. Your email application will open so you can send it.";
+
+        window.location.href =
+            "mailto:hello@timbercraft.co.za?subject=" + subject + "&body=" + body;
+    });
+}
 
     // Contact page: form validation feedback
     const contactForm = document.querySelector("#contact-form");

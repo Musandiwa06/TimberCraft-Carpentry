@@ -67,7 +67,6 @@ if (form && message) {
     });
 }
 
-    // Contact page: form validation feedback
    // Contact page: email submission
 const contactForm = document.querySelector("#contact-form");
 const contactMessage = document.querySelector("#contact-form-message");

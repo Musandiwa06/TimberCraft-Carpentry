@@ -35,4 +35,9 @@ This file records the updates made to the website during development.
 
 ## Previous Version
 The original website contained five HTML pages, a CSS stylesheet, JavaScript and an images folder.
-
+### Form functionality updates
+- Added email submission links to the Enquiry and Contact forms using `mailto:`.
+- Enquiry emails include the customer's contact details, selected service, budget and project description.
+- Contact emails include the customer's contact details, message type and message.
+- Tested both forms on the live GitHub Pages website.
+- Confirmed that the email application opens with the form information pre-filled. Customers must still press Send to submit the email.

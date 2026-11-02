@@ -28,6 +28,13 @@ This file records the updates made to the website during development.
 - Added CSS styling to improve the appearance and usability of the accordion.
 - Tested the accordion to confirm that all service sections open and close correctly.
 
+### Search and Filter Functionality
+- Added a search box to the Services page.
+- Used JavaScript DOM manipulation to filter services according to their headings.
+- Added a message showing the number of matching services.
+- Added a message when no matching services are found.
+- Tested the search feature using different service names and confirmed that clearing the search displays all six services.
+  
 ### Website Files and Documentation
 - Created `sitemap.xml` to list the five website pages.
 - Created `robots.txt` to specify crawler access instructions.

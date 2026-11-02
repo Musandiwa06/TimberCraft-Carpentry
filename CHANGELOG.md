@@ -1,4 +1,3 @@
-
 # Changelog - TimberCraft Carpentry Website
 
 This file records the updates made to the website during development.
@@ -16,6 +15,19 @@ This file records the updates made to the website during development.
 - Added a minimum message length of 10 characters.
 - Added status messages to provide feedback after form submission.
 
+### Form Functionality Updates
+- Added email submission links to the Enquiry and Contact forms using `mailto:`.
+- Enquiry emails include the customer's contact details, selected service, budget and project description.
+- Contact emails include the customer's contact details, message type and message.
+- Tested both forms on the live GitHub Pages website.
+- Confirmed that the email application opens with the form information pre-filled. Customers must still press Send to submit the email.
+
+### Interactive Website Features
+- Added an interactive accordion to the Services page using HTML `<details>` and `<summary>` elements.
+- Visitors can expand and collapse each of the six carpentry services to view descriptions and starting prices.
+- Added CSS styling to improve the appearance and usability of the accordion.
+- Tested the accordion to confirm that all service sections open and close correctly.
+
 ### Website Files and Documentation
 - Created `sitemap.xml` to list the five website pages.
 - Created `robots.txt` to specify crawler access instructions.
@@ -27,17 +39,5 @@ This file records the updates made to the website during development.
 - Prioritised the homepage hero image for loading.
 - Reviewed lazy loading for images where appropriate.
 
-### Outstanding Tasks
-- Configure actual email submission for the enquiry and contact forms.
-- Replace the placeholder domain in `sitemap.xml` and `robots.txt` with the published website URL.
-- Complete website testing across different screen sizes and browsers.
-- Deploy the website and add its published URL to the README.
-
 ## Previous Version
 The original website contained five HTML pages, a CSS stylesheet, JavaScript and an images folder.
-### Form functionality updates
-- Added email submission links to the Enquiry and Contact forms using `mailto:`.
-- Enquiry emails include the customer's contact details, selected service, budget and project description.
-- Contact emails include the customer's contact details, message type and message.
-- Tested both forms on the live GitHub Pages website.
-- Confirmed that the email application opens with the form information pre-filled. Customers must still press Send to submit the email.

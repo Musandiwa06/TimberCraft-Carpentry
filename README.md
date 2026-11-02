@@ -12,21 +12,23 @@ The website allows visitors to:
 - View the carpentry and woodworking services offered.
 - Request a quotation.
 - Find business contact information.
-- Submit an enquiry through an online form.
+- Submit enquiries and contact messages online.
 
 ## Website Pages
 
 1. **Home (`index.html`)** - Introduces the business and links to the main website sections.
 2. **About Us (`about.html`)** - Describes the business, its mission, vision, values and team.
-3. **Services (`services.html`)** - Presents the carpentry and woodworking services offered.
+3. **Services (`services.html`)** - Presents the carpentry services using an interactive accordion and search feature.
 4. **Enquiry (`enquiry.html`)** - Allows visitors to provide project details and request a quotation.
 5. **Contact (`contact.html`)** - Displays contact information, locations, opening hours and a contact form.
 
 ## Technologies Used
 
-- **HTML5** - Structures the website content.
+- **HTML5** - Structures the website content and forms.
 - **CSS3** - Styles the website and supports responsive layouts.
-- **JavaScript** - Provides interactive service-selection messages and form feedback.
+- **JavaScript** - Provides interactive features, DOM manipulation, form validation and AJAX submission.
+- **Formspree** - Receives form submissions from the website.
+- **GitHub Pages** - Hosts and publishes the website.
 
 ## Project Structure
 
@@ -47,33 +49,60 @@ PART1/
 ├── README.md
 ├── CHANGELOG.md
 └── REFERENCES.md
-
 ```
 
 ## Part 3 Improvements
 
-- Added page titles and meta descriptions for SEO.
-- Improved heading structure across updated pages.
-- Added required-field validation to the enquiry and contact forms.
-- Added a minimum message length of 10 characters.
-- Added interactive messages when visitors select a service.
-- Added form status messages to provide feedback.
-- Created a sitemap listing the five website pages.
+### Search Engine Optimisation (SEO)
+- Added page titles and meta descriptions.
+- Improved heading structure across website pages.
+- Added descriptive image alternative text.
+- Created `sitemap.xml` listing the five website pages.
 - Created `robots.txt` with crawler access instructions.
-- Reviewed responsive CSS styling for different screen sizes.
+- Reviewed internal links and mobile responsiveness.
+
+### Interactive Features
+- Added an interactive accordion to the Services page.
+- Added a search feature that filters services according to their headings.
+- Added JavaScript messages when visitors select a service.
+- Used DOM manipulation to update website content dynamically.
+
+### Form Validation and AJAX
+- Added required-field validation to the Enquiry and Contact forms.
+- Added South African phone number validation.
+- Added a minimum message length of 10 characters.
+- Integrated Formspree to receive website form submissions.
+- Used the JavaScript Fetch API to submit form data asynchronously.
+- Used FormData to collect form information.
+- Added success and error messages for form submissions.
+- Tested both forms and confirmed that submissions work without reloading the webpage.
+
+### Responsive Design and Performance
+- Reviewed the website layout on desktop, tablet and mobile screen sizes.
+- Improved image loading and accessibility.
+- Tested the live website using Google Lighthouse.
+- Achieved scores of 100 for Performance, Accessibility, Best Practices and SEO in the recorded Lighthouse test.
 
 ## How to Run the Website
 
-1. Open the project folder in Visual Studio Code.
-2. Open `index.html` in a web browser, or use the Live Server extension.
+1. Open the project folder in Visual Studio Code or another code editor.
+2. Open `index.html` in a web browser, or use a local development server.
 3. Use the navigation menu to visit the other pages.
-4. Test the enquiry and contact forms using sample information.
-
-## Current Limitations
-
-The forms currently validate user input and display feedback in the browser. Actual email submission has not yet been configured. The sitemap and `robots.txt` must be updated with the final website URL after deployment.
+4. Test the Services search and accordion.
+5. Test the Enquiry and Contact forms using sample information.
 
 ## Deployment
 
-The website hosting platform and published URL will be added after deployment is completed.
+The website is published using GitHub Pages.
 
+**Live Website:**  
+https://musandiwa06.github.io/TimberCraft-Carpentry/
+
+**GitHub Repository:**  
+https://github.com/Musandiwa06/TimberCraft-Carpentry
+
+## Current Limitations
+
+- Form submissions depend on the availability of the external Formspree service.
+- The website is a static website and does not have its own database or custom backend.
+- Visitors need an internet connection to submit forms through Formspree.

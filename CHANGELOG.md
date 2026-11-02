@@ -45,6 +45,9 @@ This file records the updates made to the website during development.
 - Added alternative text and dimensions to the homepage hero image.
 - Prioritised the homepage hero image for loading.
 - Reviewed lazy loading for images where appropriate.
-
+- Ran Google Lighthouse tests on the live website.
+- Achieved a score of 100 for Performance, Accessibility, Best Practices and SEO.
+- Confirmed that the website meets the tested Lighthouse quality checks.
+  
 ## Previous Version
 The original website contained five HTML pages, a CSS stylesheet, JavaScript and an images folder.

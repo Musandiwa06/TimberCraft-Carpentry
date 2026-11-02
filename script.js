@@ -100,5 +100,36 @@ if (contactForm && contactMessage) {
             "mailto:hello@timbercraft.co.za?subject=" + subject + "&body=" + body;
     });
 }
+    // Services page: search and filter
+    const serviceSearch = document.querySelector("#service-search");
+    const searchMessage = document.querySelector("#search-message");
 
+    if (serviceSearch && searchMessage) {
+        const serviceItems = document.querySelectorAll(
+            ".services-accordion details"
+        );
+
+        serviceSearch.addEventListener("input", function () {
+            const searchText = serviceSearch.value.toLowerCase().trim();
+            let visibleCount = 0;
+
+            serviceItems.forEach(function (item) {
+                const serviceText = item.textContent.toLowerCase();
+
+                if (serviceText.includes(searchText)) {
+                    item.style.display = "";
+                    visibleCount++;
+                } else {
+                    item.style.display = "none";
+                }
+            });
+
+            if (visibleCount === 0) {
+                searchMessage.textContent = "No matching services found.";
+            } else {
+                searchMessage.textContent =
+                    "Showing " + visibleCount + " service(s).";
+            }
+        });
+    }
 });

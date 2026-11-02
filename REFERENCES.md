@@ -9,5 +9,8 @@ MDN Web Docs (n.d.) *HTML: HyperText Markup Language*. Available at: https://dev
 
 MDN Web Docs (n.d.) *JavaScript*. Available at: https://developer.mozilla.org/en-US/docs/Web/JavaScript (Accessed: 18 October 2026).
 
-Sitemaps.org (n.d.) *Sitemaps XML format*. Available at: https://www.sitemaps.org/protocol.html (Accessed: 18 October 2026).
+MDN Web Docs (n.d.) *Using the Fetch API*. Available at: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch (Accessed: 18 October 2026).
 
+Formspree (n.d.) *Formspree documentation*. Available at: https://help.formspree.io/ (Accessed: 18 October 2026).
+
+Sitemaps.org (n.d.) *Sitemaps XML format*. Available at: https://www.sitemaps.org/protocol.html (Accessed: 18 October 2026).

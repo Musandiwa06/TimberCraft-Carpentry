@@ -1,4 +1,49 @@
+
 document.addEventListener("DOMContentLoaded", function () {
+
+    // Formspree endpoint for both forms
+    const formspreeURL = "https://formspree.io/f/mwllwqbp";
+
+    // Reusable AJAX form submission function
+    async function submitForm(form, statusMessage, successText) {
+        const submitButton = form.querySelector(
+            'button[type="submit"], input[type="submit"]'
+        );
+
+        if (submitButton) {
+            submitButton.disabled = true;
+        }
+
+        statusMessage.textContent = "Sending your message...";
+
+        try {
+            const formData = new FormData(form);
+
+            const response = await fetch(formspreeURL, {
+                method: "POST",
+                body: formData,
+                headers: {
+                    "Accept": "application/json"
+                }
+            });
+
+            if (response.ok) {
+                statusMessage.textContent = successText;
+                form.reset();
+            } else {
+                statusMessage.textContent =
+                    "Sorry, your message could not be sent. Please try again.";
+            }
+
+        } catch (error) {
+            statusMessage.textContent =
+                "There was a connection problem. Please check your internet and try again.";
+        } finally {
+            if (submitButton) {
+                submitButton.disabled = false;
+            }
+        }
+    }
 
     // Enquiry page: service selection messages
     const serviceSelect = document.querySelector("#service");
@@ -31,75 +76,38 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // Enquiry page: email submission
-const form = document.querySelector("#enquiry-form");
-const message = document.querySelector("#form-message");
+    // Enquiry page: AJAX form submission
+    const form = document.querySelector("#enquiry-form");
+    const message = document.querySelector("#form-message");
 
-if (form && message) {
-    form.addEventListener("submit", function (event) {
-        event.preventDefault();
+    if (form && message) {
+        form.addEventListener("submit", function (event) {
+            event.preventDefault();
 
-        const service = serviceSelect.options[serviceSelect.selectedIndex].text;
-        const budgetSelect = document.querySelector("#budget");
-        const budget = budgetSelect.options[budgetSelect.selectedIndex].text;
+            submitForm(
+                form,
+                message,
+                "Thank you! Your enquiry has been submitted successfully."
+            );
+        });
+    }
 
-        const name = document.querySelector("#name").value;
-        const email = document.querySelector("#email").value;
-        const phone = document.querySelector("#phone").value;
-        const description = document.querySelector("#message").value;
+    // Contact page: AJAX form submission
+    const contactForm = document.querySelector("#contact-form");
+    const contactMessage = document.querySelector("#contact-form-message");
 
-        const subject = encodeURIComponent("TimberCraft Carpentry Enquiry");
+    if (contactForm && contactMessage) {
+        contactForm.addEventListener("submit", function (event) {
+            event.preventDefault();
 
-        const body = encodeURIComponent(
-            "Name: " + name +
-            "\nEmail: " + email +
-            "\nPhone: " + phone +
-            "\nService: " + service +
-            "\nBudget: " + budget +
-            "\nProject Description: " + description
-        );
+            submitForm(
+                contactForm,
+                contactMessage,
+                "Thank you! Your message has been submitted successfully."
+            );
+        });
+    }
 
-        message.textContent =
-            "Your enquiry is ready. Your email application will open so you can send it.";
-
-        window.location.href =
-            "mailto:hello@timbercraft.co.za?subject=" + subject + "&body=" + body;
-    });
-}
-
-   // Contact page: email submission
-const contactForm = document.querySelector("#contact-form");
-const contactMessage = document.querySelector("#contact-form-message");
-
-if (contactForm && contactMessage) {
-    contactForm.addEventListener("submit", function (event) {
-        event.preventDefault();
-
-        const name = document.querySelector("#contact-name").value;
-        const email = document.querySelector("#contact-email").value;
-        const phone = document.querySelector("#contact-phone").value;
-        const messageType = document.querySelector("#message-type").value;
-        const userMessage = document.querySelector("#contact-message").value;
-
-        const subject = encodeURIComponent(
-            "TimberCraft Carpentry Contact Message"
-        );
-
-        const body = encodeURIComponent(
-            "Name: " + name +
-            "\nEmail: " + email +
-            "\nPhone: " + phone +
-            "\nMessage Type: " + messageType +
-            "\nMessage: " + userMessage
-        );
-
-        contactMessage.textContent =
-            "Your message is ready. Your email application will open so you can send it.";
-
-        window.location.href =
-            "mailto:hello@timbercraft.co.za?subject=" + subject + "&body=" + body;
-    });
-}
     // Services page: search and filter
     const serviceSearch = document.querySelector("#service-search");
     const searchMessage = document.querySelector("#search-message");
@@ -114,7 +122,8 @@ if (contactForm && contactMessage) {
             let visibleCount = 0;
 
             serviceItems.forEach(function (item) {
-                const serviceText = item.textContent.toLowerCase();
+                const serviceText = item.querySelector("summary")
+                    .textContent.toLowerCase();
 
                 if (serviceText.includes(searchText)) {
                     item.style.display = "";
@@ -125,11 +134,13 @@ if (contactForm && contactMessage) {
             });
 
             if (visibleCount === 0) {
-                searchMessage.textContent = "No matching services found.";
+                searchMessage.textContent =
+                    "No matching services found.";
             } else {
                 searchMessage.textContent =
                     "Showing " + visibleCount + " service(s).";
             }
         });
     }
+
 });

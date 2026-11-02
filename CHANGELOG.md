@@ -51,3 +51,12 @@ This file records the updates made to the website during development.
   
 ## Previous Version
 The original website contained five HTML pages, a CSS stylesheet, JavaScript and an images folder.
+
+### AJAX Form Submission
+- Integrated Formspree to receive website form submissions.
+- Implemented JavaScript Fetch API to submit form data asynchronously.
+- Updated the Enquiry form to submit customer and project information using AJAX.
+- Updated the Contact form to submit customer contact details and messages using AJAX.
+- Added success and error messages to provide feedback to website visitors.
+- Used FormData to collect form information before submission.
+- Tested both forms and confirmed that submissions work without reloading the webpage.
